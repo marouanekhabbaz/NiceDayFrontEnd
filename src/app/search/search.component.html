@@ -1,0 +1,28 @@
+<div class="container p-4">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card card-body">
+      <img width="180" alt="Angular Logo" src="https://wilcity.com/wp-content/uploads/2018/12/sample-logo-design-png-3.png" class="mx-auto">
+        <form (submit)="submitLocation(cityName, countryCode)">
+          <input type="text" placeholder="City Name" class="form-control" autofocus #cityName>
+          <input type="text" placeholder="Country Code" class="form-control" #countryCode>
+          <button class="btn btn-primary btn-block mt-2">
+            Get Weather
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div *ngIf="weather" class="card card-body text-center">
+        <h1 class="h4">Weather Information</h1>
+        <p>City: {{weather.name}}</p>
+        <p>Description: {{weather.weather[0].description }}</p>
+        <p>Temperature: {{weather.main.temp}} °F</p>
+        <p>Latitude: {{weather.coord.lat}}</p>
+        <p>Longitude: {{weather.coord.lon}}</p>
+        <p>Humidity: {{weather.main.humidity}}</p>
+        <p>Pressure: {{weather.main.pressure}}</p>
+      </div>
+    </div>
+  </div>
+</div>
