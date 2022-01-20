@@ -1,11 +1,8 @@
-<head>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-</head>
 
   <nav class="navbar sticky-top navbar-expand-lg bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="#">Logo</a>
+      <a class="navbar-brand" routerLink="/logedIn"> Welcome {{user.firstName}} </a>
+      <a class="navbar-brand" routerLink="/logedIn"  (click)="addMemory()"> add memormy </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
    <i class="fas fa-bars"></i>
   </button>
@@ -13,14 +10,14 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto w-100 justify-content-end">
           <li class="nav-item active">
-            <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" routerLink="/logedIn">Home <span class="sr-only">(current)</span></a>
           </li>
 
 
 
 
           <li   class="nav-item">
-            <a  class="nav-link"routerLink="/memories">Memories </a>
+            <a  class="nav-link"routerLink="/favorites">Memories </a>
          </li>
 
 
@@ -29,7 +26,7 @@
        </li>
 
           <li  class="nav-item">
-            <a  class="nav-link"routerLink="/signout">Sign out </a>
+            <a  class="nav-link" (click)="signout()" >Sign out </a>
          </li>
 
         </ul>
@@ -39,8 +36,29 @@
 
 
 
-<h1>Welcome {{user.firstName}}</h1>
-<p>{{user.memories}}</p>
+
+
+
+<app-findweather></app-findweather>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <app-today></app-today>
+    </div>
+
+    <div class="col-sm-6">
+      <app-future></app-future>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+      <app-search></app-search>
+  </div>
+</div>
 
 
 

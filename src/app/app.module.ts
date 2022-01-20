@@ -18,6 +18,12 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { TodayComponent } from './today/today.component';
 import { FutureComponent } from './future/future.component';
 import { SearchComponent } from './search/search.component';
+import { ModalComponent } from './modal/modal.component';
+
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -33,17 +39,19 @@ import { SearchComponent } from './search/search.component';
     FavoritesComponent,
     TodayComponent,
     FutureComponent,
-    SearchComponent
+    SearchComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
 
   ],
-  providers: [AppComponent, NavComponent, LoginComponent, ApixuService],
+  providers: [AppComponent, NavComponent, LoginComponent, ApixuService , TodayComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

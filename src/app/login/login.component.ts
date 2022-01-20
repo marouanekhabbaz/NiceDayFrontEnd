@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { User } from '../models/user';
 import { Router } from '@angular/router';
+import { ClientMessage } from '../models/client-message';
 
 
 @Component({
@@ -16,6 +17,8 @@ export class LoginComponent  {
   constructor(private userService: UserService  , private router: Router) { }
 
   title = 'Login';
+
+  public clientMessage = new ClientMessage('',0);
 
 
 
@@ -36,9 +39,16 @@ export class LoginComponent  {
        this.user =data ;
         AppComponent.islogedIn =true ;
         LoginComponent.theUser = data;
+        this.clientMessage.message = 'Successfully login';
+        this.clientMessage.status = true;
         this.router.navigate(['/logedIn']);
 
-        })
+        } ,
+        error => {this.clientMessage.message = `password and email doesn't match`;
+        this.clientMessage.status = false;
+
+        }
+        )
 
   }
 

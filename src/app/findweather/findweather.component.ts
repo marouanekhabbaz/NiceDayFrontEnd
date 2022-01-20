@@ -19,6 +19,9 @@ export class FindweatherComponent implements OnInit {
 
     ) { }
 
+   public static weather : any = "";
+
+
   ngOnInit(){
     this.weatherSearchForm = this.formBuilder.group({
       location: ['']
@@ -28,7 +31,7 @@ export class FindweatherComponent implements OnInit {
   sendToAPIXU(formValues){
       this.apixuService
       .getWeather(formValues.location)
-      .subscribe(data => this.weatherData = data)
+      .subscribe(data => {this.weatherData = data; FindweatherComponent.weather = data })
       console.log(this.weatherData);
     }
   }
