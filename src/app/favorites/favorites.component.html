@@ -34,19 +34,6 @@
 
 
 
-<!-- date : string;
-  description: string;
-  temp:       number;
-  feels_like: number;
-  temp_min:   number;
-  temp_max:   number;
-  pressure:   number;
-  humidity:   number;
-  speed:      number;
-  country:    string;
-  sunrise:    number;
-  sunset:     number;-->
-
   <div class="container" *ngFor="let m of memories" id="wrapper" style="margin-top: 10px;">
     <div   class="container-fluid" id="current-weather">
       <div class="row">
@@ -85,7 +72,7 @@
             <h6>Humidity: <span id="humidity"> {{m.humidity}} </span>%</h6>
           </div>
           <div class="col-md-12 col-sm-3 col-xs-3 side-weather-info">
-            <h6>Feels like: <span id="wind">{{ m.feels_like}}</span> m/s</h6>
+            <h6>Feels like: <span id="wind">{{ m.feels_like}}</span> </h6>
           </div>
           <div class="col-md-12 col-sm-3 col-xs-3 side-weather-info">
             <h6>High: <span id="mainTempHot">{{m.temp_max}}</span>°</h6>
