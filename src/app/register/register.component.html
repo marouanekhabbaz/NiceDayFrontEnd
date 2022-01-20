@@ -11,6 +11,14 @@
 
                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">{{title}}  </p>
 
+                <div *ngIf="clientMessage.message.length > 0 && clientMessage.status==true " class="alert alert-success" role="alert">
+                  {{ clientMessage.message }}
+                </div>
+
+                <div *ngIf="clientMessage.message.length > 0 && clientMessage.status==false " class="alert alert-danger" role="alert">
+                  {{ clientMessage.message }}
+                </div>
+
                 <form class="mx-1 mx-md-4">
 
                   <div class="d-flex flex-row align-items-center mb-4">
