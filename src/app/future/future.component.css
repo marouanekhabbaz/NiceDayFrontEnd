@@ -1,3 +1,14 @@
+.card {
+  background-image: url("https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80");
+  background-size: cover;
+  border-radius: 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-right: 50px;
+  color: aliceblue;
+  padding: 20px;
+}
+
 .main {
   display: grid;
   grid-template-columns: repeat(5, 6rem);
@@ -16,4 +27,9 @@
 
 .selected {
   font-weight: bold;
+}
+
+#arrowdown {
+  padding-right: 20px;
+  border-top: 4px;
 }
