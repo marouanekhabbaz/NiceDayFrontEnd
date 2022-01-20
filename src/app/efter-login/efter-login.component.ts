@@ -24,20 +24,13 @@ export class EfterLoginComponent implements OnInit {
   weather = this.today.weatherNow;
   ngOnInit(): void {
 
+    if(! LoginComponent.theUser){
+      this.router.navigate(['/'])
+    }
+
+
     this.forecastService.getWeatherForecast().subscribe((data :any) =>{
       this.today.getTodayForecast(data);
-
-
-
-
-      console.log( data.list[0].main.temp,
-        data.list[0].main.feels_like,
-        data.list[0].main.temp_min,
-        data.list[0].main.temp_max,
-        data.list[0].main.pressure,
-        data.list[0].main.humidity,
-        data.list[0].wind.speed, data.city.name , data.city.sunrise,  data.city.sunset ,   data.list[0].weather[0].description)
-
 
     this.memory =  new Memory(
       data.list[0].main.temp,
@@ -70,8 +63,11 @@ export class EfterLoginComponent implements OnInit {
       this.router.navigate(['/favorites'])
     })
 
+  }
 
-
+  signout(){
+    LoginComponent.theUser =  new User("","","","","");
+    this.router.navigate(['/home'])
   }
 
   setUser(user : any){

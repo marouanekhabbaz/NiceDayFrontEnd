@@ -1,6 +1,6 @@
 <nav class="navbar sticky-top navbar-expand-lg bg-dark">
   <div class="container">
-    <a class="navbar-brand" routerLink="/logedIn"> Welcome {{user.firstName.toUpperCase()}} </a>
+    <a class="navbar-brand" routerLink="/logedIn"> Welcome {{user.firstName}} </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
  <i class="fas fa-bars"></i>
 </button>
@@ -24,7 +24,7 @@
      </li>
 
         <li  class="nav-item">
-          <a  class="nav-link"routerLink="/signout">Sign out </a>
+          <a  class="nav-link"  (click)="signout()"   >Sign out </a>
        </li>
 
       </ul>

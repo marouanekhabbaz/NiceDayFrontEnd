@@ -5,7 +5,7 @@
 
   <nav class="navbar sticky-top navbar-expand-lg bg-dark">
     <div class="container">
-      <a class="navbar-brand" routerLink="/logedIn"> Edit {{user.firstName.toUpperCase()}} Info : </a>
+      <a class="navbar-brand" routerLink="/logedIn"> Edit info : </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
    <i class="fas fa-bars"></i>
   </button>
@@ -17,26 +17,21 @@
           </li>
 
           <li   class="nav-item">
-            <a  class="nav-link"routerLink="/memories">Memories </a>
+            <a  class="nav-link"routerLink="/favorites">Memories </a>
          </li>
 
          <li  class="nav-item">
-          <a  class="nav-link"routerLink="/edit"> Edit profile </a>
+          <a  class="nav-link" routerLink="/edit"   > Edit profile </a>
         </li>
 
           <li  class="nav-item">
-            <a  class="nav-link"routerLink="/signout">Sign out </a>
+            <a  class="nav-link"    routerLink="/" (click)="signout() "  routerLink="/" >Sign out </a>
          </li>
 
         </ul>
       </div>
     </div>
   </nav>
-
-
-
-<h1>Welcome {{user.firstName}}</h1>
-<p>{{user.memories}}</p>
 
 
 <section class="vh-100" style="background-color: #eee;">
@@ -48,7 +43,16 @@
             <div class="row justify-content-center">
               <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4"> hello  </p>
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">   </p>
+
+
+                <div *ngIf="clientMessage.message.length > 0 && clientMessage.status==true " class="alert alert-success" role="alert">
+                  {{ clientMessage.message }}
+                </div>
+
+                <div *ngIf="clientMessage.message.length > 0 && clientMessage.status==false " class="alert alert-danger" role="alert">
+                  {{ clientMessage.message }}
+                </div>
 
                 <form class="mx-1 mx-md-4">
 
@@ -107,7 +111,7 @@
 
 
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="button" class="btn btn-secondary" (click)="updateUser( )">Register</button>
+                    <button type="button" class="btn btn-secondary" (click)="updateUser( )">Update</button>
                   </div>
 
                 </form>

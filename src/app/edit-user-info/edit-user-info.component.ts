@@ -1,8 +1,11 @@
+
+import { Router } from '@angular/router';
 import { User } from './../models/user';
-import { throwError } from 'rxjs';
+import { from, throwError } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { LoginComponent } from '../login/login.component';
 import { UserService } from '../services/user.service';
+import { ClientMessage } from '../models/client-message';
 
 @Component({
   selector: 'app-edit-user-info',
@@ -14,12 +17,19 @@ export class EditUserInfoComponent implements OnInit {
 
 
   ngOnInit(): void {
+
+    if(! LoginComponent.theUser){
+      this.router.navigate(['/'])
+    }
+
+
   }
 
-  constructor(private lg :LoginComponent  , private userService: UserService) { }
+  constructor(private lg :LoginComponent  , private userService: UserService ,private  router : Router) { }
 
   public user = LoginComponent.theUser;
 
+  public clientMessage = new ClientMessage('',0);
 
    public updateUser( ): void {
 
@@ -33,11 +43,32 @@ export class EditUserInfoComponent implements OnInit {
 
     console.log(x)
 
-    this.userService.updateUser(x , this.user.userId ).subscribe(data=> console.log(data))
+    this.userService.updateUser(x , this.user.userId ).subscribe(data=> {
+
+      console.log(data)
+      this.clientMessage.message = 'Successfully updated';
+      this.clientMessage.status = true;
+      setTimeout(() =>   this.router.navigate(['/logedIn']), 1000);
 
 
+
+
+
+     },
+
+
+     error => {this.clientMessage.message = `Something went wrong. please try again`;
+     this.clientMessage.status = false;
+    }
+
+    )
   }
 
+
+  signout(){
+    LoginComponent.theUser =  new User("","","","","");
+    this.router.navigate(['/home'])
+  }
 
 
 }

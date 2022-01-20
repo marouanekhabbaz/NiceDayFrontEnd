@@ -43,8 +43,11 @@ export class RegisterComponent {
 
     this.userService.registerUser(x )
       .subscribe(
-        data =>{ this.userService.addMemoryToUser(mem, data)
-          .subscribe(data => console.log(data));
+        data =>{
+
+          // this.userService.addMemoryToUser(mem, data)
+          // .subscribe(data => console.log(data));
+
        this.clientMessage.message = 'Successfully registered welcome to Nice Day';
        this.clientMessage.status = true;
        setTimeout(() =>   this.router.navigate(['/login']), 1000);
