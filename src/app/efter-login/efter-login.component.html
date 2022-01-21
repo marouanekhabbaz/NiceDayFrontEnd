@@ -2,7 +2,7 @@
   <nav class="navbar sticky-top navbar-expand-lg bg-dark">
     <div class="container">
       <a class="navbar-brand" routerLink="/logedIn"> Welcome {{user.firstName}} </a>
-      <a class="navbar-brand" routerLink="/logedIn"  (click)="addMemory()"> add memormy </a>
+      <a class="add" routerLink="/logedIn"  (click)="addMemory()"> ADD MEMORY </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
    <i class="fas fa-bars"></i>
   </button>
@@ -10,23 +10,23 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto w-100 justify-content-end">
           <li class="nav-item active">
-            <a class="nav-link" routerLink="/logedIn">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" routerLink="/logedIn">HOME <span class="sr-only">(current)</span></a>
           </li>
 
 
 
 
           <li   class="nav-item">
-            <a  class="nav-link"routerLink="/favorites">Memories </a>
+            <a  class="nav-link"routerLink="/favorites">MEMORIES </a>
          </li>
 
 
          <li  class="nav-item">
-          <a  class="nav-link"routerLink="/edit"> Edit profile </a>
+          <a  class="nav-link"routerLink="/edit"> EDIT PROFILE </a>
        </li>
 
           <li  class="nav-item">
-            <a  class="nav-link" (click)="signout()" >Sign out </a>
+            <a  class="nav-link" (click)="signout()" >SIGN OUT </a>
          </li>
 
         </ul>
@@ -38,7 +38,7 @@
 
 
 
-
+<body>
 <app-findweather></app-findweather>
 
 <div class="container">
@@ -61,7 +61,7 @@
 </div>
 
 
-
+</body>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>

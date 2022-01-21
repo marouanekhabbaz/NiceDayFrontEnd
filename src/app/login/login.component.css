@@ -1,0 +1,16 @@
+body {
+  background: url(https://wallpapersmug.com/download/2560x1440/44970b/clouds-white-horizon-mountains-4k.jpg);
+  background-size: auto;
+}
+
+#cardbody {
+  background-image: url("https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80");
+  background-size: cover;
+  border-radius: 20px;
+  color: aliceblue;
+}
+
+#input {
+  font-weight: bolder;
+  color: aliceblue;
+}

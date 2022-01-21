@@ -1,0 +1,33 @@
+.nav-link {
+  background-image: url("https://plchldr.co/i/250x215?&bg=2ebdc5&text=");
+  background-size: cover;
+  border-radius: 10px;
+  /* box-shadow: 0px 8px 16px 4px #9e9e9e; */
+  margin-right: 30px;
+  color: black;
+  font-weight: bolder;
+  font-size: large;
+}
+
+.navbar-brand {
+  font-weight: bolder;
+  font-size: 30px;
+  color: #2ebdc5;
+}
+
+.add {
+  background-image: url("https://plchldr.co/i/250x215?&bg=2ebdc5&text=");
+  background-size: cover;
+  border-radius: 10px;
+  /* box-shadow: 0px 8px 16px 4px #9e9e9e; */
+  padding: 8px;
+  color: black;
+  font-weight: bolder;
+  font-size: large;
+  text-decoration: none;
+}
+
+body {
+  background: url(https://wallpapersmug.com/download/2560x1440/44970b/clouds-white-horizon-mountains-4k.jpg);
+  background-size: auto;
+}

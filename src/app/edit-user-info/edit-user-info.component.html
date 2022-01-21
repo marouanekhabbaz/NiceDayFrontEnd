@@ -5,7 +5,7 @@
 
   <nav class="navbar sticky-top navbar-expand-lg bg-dark">
     <div class="container">
-      <a class="navbar-brand" routerLink="/logedIn"> Edit info : </a>
+      <a class="navbar-brand" routerLink="/logedIn"> EDIT PROFILE </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
    <i class="fas fa-bars"></i>
   </button>
@@ -13,19 +13,19 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto w-100 justify-content-end">
           <li class="nav-item active">
-            <a class="nav-link" routerLink="/logedIn">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" routerLink="/logedIn">HOME <span class="sr-only">(current)</span></a>
           </li>
 
           <li   class="nav-item">
-            <a  class="nav-link"routerLink="/favorites">Memories </a>
+            <a  class="nav-link"routerLink="/favorites">MEMORIES </a>
          </li>
 
          <li  class="nav-item">
-          <a  class="nav-link" routerLink="/edit"   > Edit profile </a>
+          <a  class="nav-link" routerLink="/edit"   > EDIT PROFILE </a>
         </li>
 
           <li  class="nav-item">
-            <a  class="nav-link"    routerLink="/" (click)="signout() "  routerLink="/" >Sign out </a>
+            <a  class="nav-link"    routerLink="/" (click)="signout() "  routerLink="/" >SIGN OUT </a>
          </li>
 
         </ul>
@@ -33,13 +33,13 @@
     </div>
   </nav>
 
-
-<section class="vh-100" style="background-color: #eee;">
+<body>
+<section class="vh-100">
   <div class="container h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-lg-12 col-xl-11">
         <div class="card text-black" style="border-radius: 25px;">
-          <div class="card-body p-md-5">
+          <div class="card-body p-md-5" id="cardbody">
             <div class="row justify-content-center">
               <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
@@ -63,7 +63,7 @@
                       name="first" type="text" class="form-control"
 
                       id="inputFirstName" placeholder="First name">
-                      <label class="form-label" for="form3Example1c">First Name</label>
+                      <label class="form-label" for="form3Example1c" id="input">FIRST NAME</label>
                     </div>
                   </div>
 
@@ -77,7 +77,7 @@
                        type="text"  name="last" class="form-control" />
 
 
-                      <label class="form-label" for="form3Example1c">Last Name</label>
+                      <label class="form-label" for="form3Example1c" id="input">LAST NAME</label>
                     </div>
                   </div>
 
@@ -86,7 +86,7 @@
                     <div class="form-outline flex-fill mb-0">
                       <input type="email" [(ngModel)]="user.email" name="email"   class="form-control" />
 
-                      <label class="form-label" for="form3Example3c">Email</label>
+                      <label class="form-label" for="form3Example3c" id="input">EMAIL</label>
                     </div>
                   </div>
 
@@ -94,7 +94,7 @@
                     <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
                       <input type="text"  [(ngModel)]="user.userName" name="userName"  class="form-control" />
-                      <label class="form-label" for="form3Example4cd">username</label>
+                      <label class="form-label" for="form3Example4cd" id="input">USERNAME</label>
                     </div>
                   </div>
 
@@ -102,14 +102,9 @@
                     <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
                       <input type="password"  [(ngModel)]="user.passWord" name="passWord"  class="form-control" />
-                      <label class="form-label" for="form3Example4c">Password</label>
+                      <label class="form-label" for="form3Example4c" id="input">PASSWORD</label>
                     </div>
                   </div>
-
-
-
-
-
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                     <button type="button" class="btn btn-secondary" (click)="updateUser( )">Update</button>
                   </div>
@@ -129,7 +124,7 @@
     </div>
   </div>
 </section>
-
+</body>
 
 
 
@@ -137,3 +132,4 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
