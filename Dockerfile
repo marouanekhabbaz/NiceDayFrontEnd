@@ -3,6 +3,8 @@
 # Use official node image as the base image
 FROM node:16.13.2-alpine3.14 as build
 
+RUN node --version
+
 # FROM node:latest as build
 
 WORKDIR /usr/local/app
