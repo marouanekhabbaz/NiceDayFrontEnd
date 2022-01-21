@@ -1,9 +1,9 @@
 # Stage 1: Compile and Build angular codebase
 
 # Use official node image as the base image
-# FROM node:16.13.2-alpine3.14 as builder
+FROM node:16.13.2-alpine3.14 as builder
 
-FROM node:latest as build
+# FROM node:latest as build
 
 WORKDIR /usr/local/app
 
