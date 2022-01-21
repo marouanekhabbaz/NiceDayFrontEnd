@@ -5,10 +5,10 @@
 
 FROM node:latest as build
 
-WORKDIR /usr/local/app
+WORKDIR /usr/src/app
 
 # Add the source code to app
-COPY ./ /usr/local/app/
+COPY ./ /usr/src/app/
 
 # Install all the dependencies
 RUN npm install
@@ -23,7 +23,7 @@ RUN npm install
 FROM nginx:latest
 
 # Copy the build output to replace the default nginx contents.
-COPY --from=build /usr/local/app/dist/nice-day-frontend /usr/share/nginx/html
+COPY --from=build /usr/src/app/dist/nice-day-frontend /usr/share/nginx/html
 
 # Expose port 80
 EXPOSE 80
