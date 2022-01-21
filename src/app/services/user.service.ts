@@ -6,7 +6,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 
-const url =   `http://localhost:5000/users`;
+const url =   `http://ec2-18-206-252-36.compute-1.amazonaws.com:5000/users`;
 
 /**\
  *  fetch(this.url, {

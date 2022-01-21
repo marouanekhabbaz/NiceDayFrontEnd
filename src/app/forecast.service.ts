@@ -12,7 +12,7 @@ export class ForecastService {
 
   getWeatherForecast(){
     return new Observable((observer)=>{
-      navigator.geolocation.getCurrentPosition((position)=>{
+     window.navigator.geolocation.getCurrentPosition((position)=>{
         observer.next(position)},
         (error)=>{
           observer.next(error)
