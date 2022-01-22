@@ -30,6 +30,36 @@ rel="stylesheet"
 
 
 
+<script>
+
+
+/**
+ *
+ *   https://ipapi.co/json/
+    //latitude: 40.7182
+    // longitude: -74.0476
+ */
+
+
+fetch("https://ipapi.co/json/").then((data)=> {
+
+  console.log("from html page");
+
+  console.log(data);
+
+  window.latitude = data.latitude;
+  window.longitude = data.longitude;
+  console.log('window.latitude');
+  console.log(window.latitude , data.latitude );
+  console.log("window.longitude")
+  console.log(window.longitude, data.longitude)
+
+
+})
+
+
+</script>
+
 
 </body>
 </html>

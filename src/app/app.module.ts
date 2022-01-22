@@ -19,6 +19,7 @@ import { TodayComponent } from './today/today.component';
 import { FutureComponent } from './future/future.component';
 import { SearchComponent } from './search/search.component';
 import { ModalComponent } from './modal/modal.component';
+//import { HttpParams } from '@angular/common/http';
 
 
 
@@ -48,10 +49,11 @@ import { ModalComponent } from './modal/modal.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    //HttpParams
 
 
   ],
-  providers: [AppComponent, NavComponent, LoginComponent, ApixuService , TodayComponent],
+  providers: [AppComponent, NavComponent, LoginComponent, ApixuService , TodayComponent ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

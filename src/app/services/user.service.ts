@@ -8,6 +8,7 @@ import { catchError } from 'rxjs/operators';
 
 const url =   `http://ec2-18-206-252-36.compute-1.amazonaws.com:5000/users`;
 
+
 /**\
  *  fetch(this.url, {
       method: 'POST',
@@ -31,7 +32,7 @@ const url =   `http://ec2-18-206-252-36.compute-1.amazonaws.com:5000/users`;
 export class UserService {
 
   constructor(private http: HttpClient) { }
-
+   location : any ;
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -52,7 +53,20 @@ export class UserService {
     return throwError('Something bad happened; please try again later.');
   }
 
+  public getlocation(){
+    https://ipapi.co/json/
+    //latitude: 40.7182
+    // longitude: -74.0476
+    this.http.get("https://ipapi.co/json/").subscribe(
+      data=>{ console.log('from my function');
+      console.log(data)  ;
+      this.location = data;
+      // window.latitude =this.location.latitude;
 
+    },
+      err => {console.log("from my function") ; console.log(err)}
+    )
+  }
 
   public registerUser(user: string): Observable<number> {
 

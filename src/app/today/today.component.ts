@@ -1,5 +1,6 @@
 import { ForecastService } from '../forecast.service';
 import { Component, OnInit } from '@angular/core';
+import { HttpParams, HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-today',
@@ -12,12 +13,50 @@ export class TodayComponent implements OnInit {
   location: any;
   currentTime = new Date();
 
-  constructor(private forecastService: ForecastService) { }
+  classData;
+
+  private params :HttpParams = new HttpParams();
+
+  longitude ;
+  latitude ;
+
+  constructor(private forecastService: ForecastService , private http : HttpClient) { }
+
+  getWeatherForecast1(){
+
+    this.http.get("https://ipapi.co/json/")    .subscribe(
+      data=>{ console.log('from my function');
+      console.log(data)  ;
+      this.classData = data;
+      this.latitude = this.classData.latitude;
+      this.longitude = this.classData.longitude;
+
+    },
+      err => {console.log("from my function") ; console.log(err)}
+    );
+
+    this.params.set('lon', this.longitude)
+    .set('lat', this.latitude)
+    .set('units', 'imperial')
+    .set('appid', '3f38a7ee9e54c19358d9ae2ccc78349a');
+
+
+
+    this.params.set('lon', this.longitude)
+    .set('lat', this.latitude)
+    .set('units', 'imperial')
+    .set('appid', '3f38a7ee9e54c19358d9ae2ccc78349a')
+
+    return this.http.get('https://api.openweathermap.org/data/2.5/forecast', { params: this.params});
+
+  }
 
   ngOnInit(): void {
     this.forecastService.getWeatherForecast().subscribe(data=>{
       this.getTodayForecast(data);
     })
+
+    this. getWeatherForecast1().subscribe(data=> console.log(data, "from this line"))
   }
 
   dateRange(){

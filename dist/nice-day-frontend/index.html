@@ -19,8 +19,38 @@
 
 
 
+<script>
 
-<script src="runtime.ff2cbf4784d71b88.js" type="module"></script><script src="polyfills.195adebabb988188.js" type="module"></script><script src="main.7b738a610f505299.js" type="module"></script>
+
+/**
+ *
+ *   https://ipapi.co/json/
+    //latitude: 40.7182
+    // longitude: -74.0476
+ */
+
+
+fetch("https://ipapi.co/json/").then((data)=> {
+
+  console.log("from html page");
+
+  console.log(data);
+
+  window.latitude = data.latitude;
+  window.longitude = data.longitude;
+  console.log('window.latitude');
+  console.log(window.latitude , data.latitude );
+  console.log("window.longitude")
+  console.log(window.longitude, data.longitude)
+
+
+})
+
+
+</script>
+
+
+<script src="runtime.ff2cbf4784d71b88.js" type="module"></script><script src="polyfills.195adebabb988188.js" type="module"></script><script src="main.35df501593271fb2.js" type="module"></script>
 
 
 
